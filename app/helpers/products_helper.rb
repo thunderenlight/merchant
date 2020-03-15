@@ -11,7 +11,7 @@ module ProductsHelper
 			#content_tag(:div, content_tag(:p, "Hello world!"), class: "strong")
 
 		else
-			content_tag(:span, "out of stock", class "out_of_stock")
+			content_tag(:span, "out of stock", class: "out_of_stock")
 		end
 	end
 end
