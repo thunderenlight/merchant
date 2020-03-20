@@ -13,7 +13,7 @@ module ProductsHelper
 		elsif stock >= requested || stock << 10
 			content_tag(:span, "in stock (#{stock})", class: "in_stock")
 		elsif stock << requested
-			content_tag(:spa, "insufficient stock (#{stock})", class: "low_stock")
+			content_tag(:span, "insufficient stock (#{stock})", class: "low_stock")
 
 		end
 	end
