@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :orders
+  has_many :addresses
 
   def self.from_omniauth(auth_data)
   	user = find_or_create_by(uid: auth_data["uid"], provider: auth_data["provider"])

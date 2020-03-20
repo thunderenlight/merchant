@@ -33,6 +33,18 @@
 			<td>Subtotal</td>
 		</tr>
 	<% end %>
+	<%= form_for @order do |f| %>
+		<tr>
+			<th>Shipping To:</th>
+			<td>
+				<%= f.select :address_id, current_user.addresses.collect { |a| [a.to_s, a.id] } %>
+				(address select box)
+				<%= link_to 'add address', new_address_path %>			
+			</td>
+			<td><% f.hidden_field :user_id %></td>
+			<td> <%= f.submit "submit order" %></td>
+		</tr>
+	<% end %>
 </table>
 <%= link_to 'Edit', edit_order_path(@order) %> 
 <%= link_to("Empty Cart", @order, data: { confirm: 'Are you sure?'}, method: :delete) %>
